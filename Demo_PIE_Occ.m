@@ -4,9 +4,10 @@ addpath Data Functions
 
 method='RMJSRC_fast';
 
-%load data
+%load data (Muli-view PIE dataset, testing set with 60% occlusion; 2 views: C09,C29;)
 load MulPIE_32x32_trtt_Occ60
-num_modal=length(Tr_dat); Tt_dat_Occ=cell(num_modal,1);
+num_modal=length(Tr_dat); #num of views
+
 %-------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------
@@ -15,6 +16,7 @@ K=68;% num of classes
 lambda=1e-3; %well tuned
 
 %construct training and test data
+Tt_dat_Occ=cell(num_modal,1);
 for i=1:num_modal
     tr_dat=Tr_dat{i};tt_dat=Tt_dat{i};
     Ind=find(trls<=K);tr_dat=tr_dat(:,Ind);trls=trls(:,Ind);
