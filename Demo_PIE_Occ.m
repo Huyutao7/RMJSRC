@@ -1,6 +1,6 @@
 %RMJSRC_fast_MulPIE_Occ
 close all;clear;clc;
-addpath ..\Data ..\Functions
+addpath Data Functions
 
 method='RMJSRC_fast';
 
